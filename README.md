@@ -2,7 +2,7 @@
 
 > **Intelligent Business & Inventory Management Platform with Demand Prediction Engine**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://biz-smart-store.vercel.app/)
+[![Deploy with Vercel](https://vercel.com/button)]
 **Live Demo on Vercel**: [https://biz-smart-store.vercel.app/(https://biz-smart-store.vercel.app/)
 
 BizSmart is an end-to-end full-stack retail and inventory management application designed to eliminate stockouts and optimize purchasing decisions through real-time Machine Learning demand forecasting.
