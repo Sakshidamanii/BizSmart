@@ -1,0 +1,38 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: bizsmart-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:${DATABASE_URL:jdbc:h2:mem:bizsmartdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL}}
+    driverClassName: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+  h2:
+    console:
+      enabled: ${H2_CONSOLE_ENABLED:true}
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        # Enable connection auto-reconnect and SSL compatibility
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+# BizSmart Application Custom Config
+bizsmart:
+  app:
+    jwtSecret: ${JWT_SECRET:bizSmartSecretSuperKeyForJwtSigningMustBeVeryLongAndSecure1234567890}
+    jwtExpirationMs: ${JWT_EXPIRATION_MS:86400000} # 24 hours
+  ml-service:
+    url: ${ML_SERVICE_URL:http://localhost:8000}

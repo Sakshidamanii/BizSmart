@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
+
+# Build Outputs
+dist/
+**/dist/
+build/
+target/
+**/target/
+*.jar
+*.war
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System & Temp
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+temp/
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel/
+**/ .vercel/

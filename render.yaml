@@ -1,0 +1,27 @@
+services:
+  # BizSmart Spring Boot API Web Service
+  - type: web
+    name: bizsmart-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: bizsmart-postgres
+          property: connectionString
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: JWT_SECRET
+        generateValue: true
+
+databases:
+  # Managed Cloud PostgreSQL Database (Free)
+  - name: bizsmart-postgres
+    plan: free
+    databaseName: bizsmartdb
+    user: bizsmart
